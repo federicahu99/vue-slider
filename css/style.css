@@ -8,7 +8,7 @@
 
 /* General */
 body {
-    margin:  20px 0 0 265px;
+    margin:  5px 0 0 265px;
     background-image: url(../img/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,12 +20,12 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     color:white;
 }
 
@@ -92,3 +92,12 @@ h1 {
     color:grey;
 }
 
+/* thumbnail */
+
+.thumbnail {
+    margin-top: 20px;
+}
+
+.filtered {
+    filter: grayscale(1);
+}

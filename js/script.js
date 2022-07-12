@@ -38,8 +38,33 @@ const root = new Vue ({
       title: 'Colombia',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
-    } 
-    ]}
-
+    }]
+  }, 
+    // computed : {
+    //   IsLastOne() {
+    //     if(this.currentWatching === this.images.lenght -1 ) {
+    //       return this.currentWatching === 0;
+    //     }
+    //   },
+    //   IsFirstOne() {
+    //     if(this.currentWatching === 0 ) {
+    //       return this.currentWatching === this.images.lenght -1;
+    //     }
+    //   },
+    // },
+    methods: {
+      getPrevious() {
+        this.currentWatching--;
+        if(this.currentWatching < 0 ) {
+          return this.currentWatching === this.images.lenght -1;
+        }
+      },
+      getNext() {
+        this.currentWatching++;
+        if(this.currentWatching > this.images.lenght -1 ) {
+          return this.currentWatching === 0;
+        }
+      },
+      }
 });
 

@@ -19,7 +19,8 @@
     <section id="carousel">
         <h1>My Journey: </h1>
         <div id="root">
-            <i class="bi bi-chevron-bar-left" id="back"></i>
+            <i class="bi bi-chevron-bar-left" id="back" 
+            @click="getPrevious"></i>
 
                 <div id="gallery">
                     <div v-for="(image, index) in images">
@@ -34,9 +35,21 @@
                     </div>
                 </div>
 
-            <i class="bi bi-chevron-bar-right" id="next"></i>
+            <i class="bi bi-chevron-bar-right" id="next"
+            @click="getNext"></i>
+
+            <div class="row thumbnail">
+                <div class="col" v-for="(image, index) in images">
+                    <img  
+                        :src="image.url" 
+                        :alt="image.title" 
+                        :class="currentWatching == index ? 'active' : 'filtered'" >
+                </div>
+            </div>
         </div>
     </section>
+
+ 
 
     <script src="js/script.js"></script>
 </body>
