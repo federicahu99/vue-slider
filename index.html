@@ -21,9 +21,12 @@
         <div id="root">
             <i class="bi bi-chevron-bar-left" id="back"></i>
 
-                <div v-for="(image, index) in images" id="gallery">
-                    <img :src="image.url" alt="image.title" :class="currentWatching == index ? 'active' : ' ' " >
-                    <div class="caption" :class="{active === i}"> 
+                <div id="gallery">
+                    <img v-for="(image, index) in images" 
+                    :src="image.url" 
+                    :alt="image.title" 
+                    :class="currentWatching == index ? 'active' : ' ' " >
+                    <div class="caption" class="currentWatching == index ? 'active' : ' ' "> 
                         <h1>{{ image.title }}</h1> 
                         <div class="description">{{ image.description }}</div>
                     </div>
