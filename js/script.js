@@ -40,29 +40,27 @@ const root = new Vue ({
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.',
     }]
   }, 
-    // computed : {
-    //   IsLastOne() {
-    //     if(this.currentWatching === this.images.lenght -1 ) {
-    //       return this.currentWatching === 0;
-    //     }
-    //   },
-    //   IsFirstOne() {
-    //     if(this.currentWatching === 0 ) {
-    //       return this.currentWatching === this.images.lenght -1;
-    //     }
-    //   },
-    // },
+    //  computed : {
+    //    IsLastOne() {
+    //        return this.currentWatching === this.images.length -1;
+    //    },
+    //    IsFirstOne() {
+    //        return this.currentWatching === 0;
+    //    },
+     //
     methods: {
       getPrevious() {
+        if(this.currentWatching <= 0) {
+          this.currentWatching = this.images.length -1;
+        } else{
         this.currentWatching--;
-        if(this.currentWatching < 0 ) {
-          return this.currentWatching === this.images.lenght -1;
         }
       },
       getNext() {
+        if(this.currentWatching >= this.images.length -1) {
+           this.currentWatching = 0;
+        } else {
         this.currentWatching++;
-        if(this.currentWatching > this.images.lenght -1 ) {
-          return this.currentWatching === 0;
         }
       },
       }
